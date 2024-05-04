@@ -1,0 +1,83 @@
+[
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "math",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "math",
+        "description": "math",
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "page",
+        "kind": 5,
+        "importPath": "pharmeasy",
+        "description": "pharmeasy",
+        "peekOfCode": "page = 1\ndata = []\nwhile True:\n    url = f\"https://pharmeasy.in/api/otc/getCategoryProducts?categoryId=145&page={page}\"\n    res = re.get(url)\n    response = res.json()\n    totalProducts = len(response['data']['products'])\n    if totalProducts != 0:\n        for i in range(totalProducts):\n            try:",
+        "detail": "pharmeasy",
+        "documentation": {}
+    },
+    {
+        "label": "data",
+        "kind": 5,
+        "importPath": "pharmeasy",
+        "description": "pharmeasy",
+        "peekOfCode": "data = []\nwhile True:\n    url = f\"https://pharmeasy.in/api/otc/getCategoryProducts?categoryId=145&page={page}\"\n    res = re.get(url)\n    response = res.json()\n    totalProducts = len(response['data']['products'])\n    if totalProducts != 0:\n        for i in range(totalProducts):\n            try:\n                title = response['data']['products'][i][\"name\"]",
+        "detail": "pharmeasy",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "pharmeasy",
+        "description": "pharmeasy",
+        "peekOfCode": "df = pd.DataFrame(data)\ndf.to_csv(\"PharmEasy Diabetic Care Data\", index=False)",
+        "detail": "pharmeasy",
+        "documentation": {}
+    },
+    {
+        "label": "page",
+        "kind": 5,
+        "importPath": "topProductsAPI",
+        "description": "topProductsAPI",
+        "peekOfCode": "page = 1\ndata = []\nwhile True:\n  res = requests.get(\n      f\"https://pharmeasy.in/api/otc/getCategoryProducts?categoryId=9297&page={page}\")\n  response = res.json()\n  totalProd = len(response[\"data\"][\"products\"])\n  if totalProd == 0:\n    break\n  for i in range(0, totalProd):",
+        "detail": "topProductsAPI",
+        "documentation": {}
+    },
+    {
+        "label": "data",
+        "kind": 5,
+        "importPath": "topProductsAPI",
+        "description": "topProductsAPI",
+        "peekOfCode": "data = []\nwhile True:\n  res = requests.get(\n      f\"https://pharmeasy.in/api/otc/getCategoryProducts?categoryId=9297&page={page}\")\n  response = res.json()\n  totalProd = len(response[\"data\"][\"products\"])\n  if totalProd == 0:\n    break\n  for i in range(0, totalProd):\n    try:",
+        "detail": "topProductsAPI",
+        "documentation": {}
+    },
+    {
+        "label": "\"\"\"df",
+        "kind": 5,
+        "importPath": "topProductsAPI",
+        "description": "topProductsAPI",
+        "peekOfCode": "\"\"\"df = pd.DataFrame(data)\ndf.to_csv(\"topProductsAPIdata.csv\", index=False)\"\"\"\nprint(data)",
+        "detail": "topProductsAPI",
+        "documentation": {}
+    }
+]
